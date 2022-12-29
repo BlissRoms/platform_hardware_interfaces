@@ -64,6 +64,7 @@ cc_defaults {
         "libhealthloop",
 
         // charger UI only
+		"libcharger_sysprop",
         "libhealthd_draw",
         "libhealthd_charger_ui",
         "libminui",
@@ -80,10 +81,16 @@ cc_defaults {
                 "libpng",
             ],
             exclude_static_libs: [
+				"libcharger_sysprop",
                 "libhealthd_draw",
                 "libhealthd_charger_ui",
                 "libminui",
                 "libsuspend",
+            ],
+        },
+        vendor: {
+            exclude_static_libs: [
+                "libcharger_sysprop",
             ],
         },
     },
